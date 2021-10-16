@@ -1,13 +1,13 @@
 import reactImg from '../../assets/react.jpeg';
-import './styles.css';
+import './styles.scss';
 
 function Header() {
   return (
-    <nav className="Header">
+    <header className="Header">
       <img src={reactImg} className="logo-react" alt="react logo" />
 
       <h3>Desafio React JS - Exposição de dados de servidores em Datatable</h3>
-    </nav>
+    </header>
   );
 }
 

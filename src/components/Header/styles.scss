@@ -1,4 +1,4 @@
-nav.Header {
+header.Header {
   padding: 3px 1em;
 
   display: flex;
@@ -7,9 +7,9 @@ nav.Header {
 
   background-color: #007acc;
   color: #fff;
-}
 
-nav.Header img {
-  width: 3.5rem;
-  height: 3.5rem;
+  > img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 }
