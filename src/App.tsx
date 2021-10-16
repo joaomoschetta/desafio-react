@@ -7,15 +7,12 @@ const App = () => {
       <Switch>
 
         {AppRoutes.map((route, key) => {
-        const { component, path } = route;
-        const Component = component;
+        const { ...attributes } = route;
 
         return (
           <Route
-            exact={true}
-            path={path}
-            key={key}
-            render={Component}
+            exact
+            {...attributes}
           />
         )
       })}
