@@ -4,7 +4,7 @@ import Home from '../pages/Home';
 
 const appRoutes: RouteProps[] =  [
 	{
-		render: Home,
+		component: Home,
 		path: '/',
 	}
 ];
