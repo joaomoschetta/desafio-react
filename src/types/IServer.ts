@@ -37,7 +37,7 @@ interface Configuracao {
 }
 
 export default interface IServer {
-  id_vm?: number;
+  id_vm: number;
   tags?: any[];
   tag_list?: string;
   locks?: any[];
