@@ -1,0 +1,60 @@
+@import "../../styles/colors.scss";
+
+section.SummaryTable {
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border: solid 0.5px $table-dark-gray-border;
+  border-radius: 10px;
+
+  > .top {
+    padding: 15px 12px;
+    border-radius: 10px 10px 0 0;
+    background-color: $table-gray-bg;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  > .table-overflow {
+    width: 100%;
+    display: flex;
+
+    > table {
+      flex: 1;
+      margin: 1em;
+      display: block;
+
+      border: solid 0.5px $table-gray-border;
+      border-radius: 5px;
+      border-spacing: 0;
+
+      overflow-x: auto;
+
+      @media (min-width: 720px) {
+        display: table;
+      }
+
+      * {
+        white-space: nowrap;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      th {
+        table-layout: fixed;
+        background-color: $table-gray-bg;
+        max-width: 260px;
+      }
+
+      th,
+      td {
+        padding: 1em;
+        border: solid 0.5px $table-gray-border;
+      }
+    }
+  }
+}
