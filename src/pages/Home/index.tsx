@@ -1,13 +1,19 @@
+import { ServersContextProvider } from '../../contexts/ServersContext';
 import DefaultLayout from '../../components/DefaultLayout';
+import ServersTable from '../../components/ServersTable';
+import SummaryTable from '../../components/SummaryTable';
+
+import './style.scss';
 
 function Home() {
   return (
     <DefaultLayout>
-      <p>
-        Este é o desafio para seleção para desenvolvedores Front-End React JS.
-        Você deve construir uma página de exibição de dados de servidores conforme o modelo apresentado no Figma.
-        Não é necessário construir a página com fidelidade total de estilização, pois, o mais importante para nós é conhecer a sua habilidade e domínio da biblioteca React, contudo, se você conseguir ser fiel ao modelo do Figma isso será considerado um plus.
-      </p>
+        <main>
+          <ServersContextProvider>
+            <SummaryTable />
+            <ServersTable />
+          </ServersContextProvider>
+        </main>
     </DefaultLayout>
   );
 }
