@@ -1,72 +1,31 @@
 # Desafio React JS
-Este é o desafio para seleção para desenvolvedores Front-End React JS.  Nele você será convidado a construir uma página de exibição de dados de servidores conforme o modelo apresentado no Figma. Não é necessário construir a página com fidelidade total de estilização, pois, o mais importante para nós é conhecer a sua habilidade e domínio da biblioteca React, contudo, se você conseguir ser fiel ao modelo do Figma isso será considerado um plus.
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre
 
-## Available Scripts
+Mantive a estrutura ja existente no projeto inicial, inicialmente migrei o projeto para Typescript e para SCSS, ambas ferramentas serviram para agilizar o desenvolvimento. A estrutura de pastas final foi:
 
-In the project directory, you can run:
+- src
+  - assets
+  - components
+  - contexts
+  - pages
+  - routes
+  - services
+  - styles
+  - types
 
-### `yarn start`
+O projeto utiliza de um método HTTP para pegar a lista de servidores da API e uma função que sempre retorna um erro para testar o comportamento da aplicação em caso de erro, a resposta API foi tipada na pasta types.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Surgiu um problema com o uso do atributo 'render' do react-router, quando utilizava o ContextProvider gerou um grande problema que levou bastante tempo pra ser solucionado, a maneira mais efetiva encontrada para soluciona-lo foi substituir o 'render' por 'component'.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Criei um contexto "ServersContext" que integra com a api para receber a lista de servidores e a lista de servidores selecionados. Esse contexto e compartilhado para os componentes de tabela e sumario de servidores.
 
-### `yarn test`
+Mantive bem fiel ao design no Figma e responsivo. Infelizmente não tive tempo para finalizar um requisito (ordenação da tabela) e alguns outros detalhes que gostaria de ter realizado como melhorar o reuso de componentes e estilo, principalmente para as tabelas, e automação de testes. Porem o core da aplicação foi desenvolvido, se necessário aqui esta meu contato: joaomoschetta@gmail.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Scripts
 
-### `yarn build`
+`yarn`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`yarn server`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`yarn start`
