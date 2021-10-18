@@ -18,6 +18,7 @@ type ServersContextType = {
   servers: IServer[];
   selectedServers: IServer[];
   setSelectedServers: Dispatch<SetStateAction<IServer[]>>;
+  removeServerFromSelectedServers: (serverToRemove: IServer) => void;
 }
 
 export const ServersContext = createContext({} as ServersContextType);
@@ -34,11 +35,20 @@ export function ServersContextProvider(props: ServersContextProviderProps) {
       })
   }, [])
 
+  function removeServerFromSelectedServers(serverToRemove: IServer) {
+    const serversWithoutServerToRemove = selectedServers.filter(server =>
+      server !== serverToRemove
+    );
+
+    setSelectedServers(serversWithoutServerToRemove);
+  }
+
   return (
     <ServersContext.Provider value={{
       servers,
       selectedServers,
-      setSelectedServers
+      setSelectedServers,
+      removeServerFromSelectedServers
     }}>
       { props.children }
     </ServersContext.Provider>
